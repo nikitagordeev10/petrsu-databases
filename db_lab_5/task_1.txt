@@ -1,0 +1,476 @@
+MATCH (n)
+DETACH DELETE n;
+
+CREATE 
+(:Station {name : 'Остановка 1'}),
+(:Station {name : 'Остановка 2'}),
+(:Station {name : 'Остановка 3'}),
+(:Station {name : 'Остановка 4'}),
+(:Station {name : 'Остановка 5'}),
+(:Station {name : 'Остановка 6'}),
+(:Station {name : 'Остановка 7'}),
+(:Station {name : 'Остановка 8'}),
+(:Station {name : 'Остановка 9'}),
+(:Station {name : 'Остановка 10'}),
+(:Station {name : 'Остановка 11'}),
+(:Station {name : 'Остановка 12'}),
+(:Station {name : 'Остановка 13'}),
+(:Station {name : 'Остановка 14'}),
+(:Station {name : 'Остановка 15'}),
+(:Station {name : 'Остановка 16'}),
+(:Station {name : 'Остановка 17'}),
+(:Station {name : 'Остановка 18'}),
+(:Station {name : 'Остановка 19'}),
+(:Station {name : 'Остановка 20'}),
+(:Station {name : 'Остановка 21'}),
+(:Station {name : 'Остановка 22'}),
+(:Station {name : 'Остановка 23'}),
+(:Station {name : 'Остановка 24'}),
+(:Station {name : 'Остановка 25'}),
+(:Station {name : 'Остановка 26'}),
+(:Station {name : 'Остановка 27'}),
+(:Station {name : 'Остановка 28'}),
+(:Station {name : 'Остановка 29'}),
+(:Station {name : 'Остановка 30'});
+
+CREATE 
+(:organization:shop{name: 'Магазин 1'}),
+(:organization:shop{name: 'Магазин 2'}),
+(:organization:shop{name: 'Магазин 3'}),
+(:organization:shop{name: 'Магазин 4'}),
+(:organization:shop{name: 'Магазин 5'});
+
+CREATE 
+(:organization:school{name: 'Школа 1'}),
+(:organization:school{name: 'Школа 2'}),
+(:organization:school{name: 'Школа 3'}),
+(:organization:school{name: 'Школа 4'}),
+(:organization:school{name: 'Школа 5'});
+
+CREATE 
+(:organization:cafe{name: 'Кафе 1'}),
+(:organization:cafe{name: 'Кафе 2'}),
+(:organization:cafe{name: 'Кафе 3'}),
+(:organization:cafe{name: 'Кафе 4'}),
+(:organization:cafe{name: 'Кафе 5'});
+
+CREATE 
+(:organization:hostel{name: 'Отель 1'}),
+(:organization:hostel{name: 'Отель 2'}),
+(:organization:hostel{name: 'Отель 3'}),
+(:organization:hostel{name: 'Отель 4'}),
+(:organization:hostel{name: 'Отель 5'});
+
+CREATE 
+(:organization:hospital{name: 'Больница 1'}),
+(:organization:hospital{name: 'Больница 2'}),
+(:organization:hospital{name: 'Больница 3'}),
+(:organization:hospital{name: 'Больница 4'}),
+(:organization:hospital{name: 'Больница 5'});
+
+CREATE 
+(:organization:park{name: 'Парк 1'}),
+(:organization:park{name: 'Парк 2'}),
+(:organization:park{name: 'Парк 3'}),
+(:organization:park{name: 'Парк 4'}),
+(:organization:park{name: 'Парк 5'});
+
+CREATE 
+(:organization:library{name: 'Библиотека 1'}),
+(:organization:library{name: 'Библиотека 2'}),
+(:organization:library{name: 'Библиотека 3'}),
+(:organization:library{name: 'Библиотека 4'}),
+(:organization:library{name: 'Библиотека 5'});
+
+CREATE
+(:organization:theater{name: 'Театр 1'}),
+(:organization:theater{name: 'Театр 2'}),
+(:organization:theater{name: 'Театр 3'}),
+(:organization:theater{name: 'Театр 4'}),
+(:organization:theater{name: 'Театр 5'});
+
+CREATE 
+(:organization:dentistry{name: 'Стоматология 1'}),
+(:organization:dentistry{name: 'Стоматология 2'}),
+(:organization:dentistry{name: 'Стоматология 3'}),
+(:organization:dentistry{name: 'Стоматология 4'}),
+(:organization:dentistry{name: 'Стоматология 5'});
+
+CREATE 
+(:organization:kindergarten{name: 'Детский сад 1'}),
+(:organization:kindergarten{name: 'Детский сад 2'}),
+(:organization:kindergarten{name: 'Детский сад 3'}),
+(:organization:kindergarten{name: 'Детский сад 4'}),
+(:organization:kindergarten{name: 'Детский сад 5'});
+
+CREATE 
+(:organization:factory{name: 'Завод 1'}),
+(:organization:factory{name: 'Завод 2'}),
+(:organization:factory{name: 'Завод 3'}),
+(:organization:factory{name: 'Завод 4'}),
+(:organization:factory{name: 'Завод 5'});
+
+CREATE 
+(:organization:stadium{name: 'Стадион 1'}),
+(:organization:stadium{name: 'Стадион 2'}),
+(:organization:stadium{name: 'Стадион 3'}),
+(:organization:stadium{name: 'Стадион 4'}),
+(:organization:stadium{name: 'Стадион 5'});
+
+CREATE 
+(:organization:post_office{name: 'Почта 1'}),
+(:organization:post_office{name: 'Почта 2'}),
+(:organization:post_office{name: 'Почта 3'}),
+(:organization:post_office{name: 'Почта 4'}),
+(:organization:post_office{name: 'Почта 5'});
+
+CREATE 
+(:organization:train_station{name: 'Вокзал 1'}),
+(:organization:train_station{name: 'Вокзал 2'}),
+(:organization:train_station{name: 'Вокзал 3'}),
+(:organization:train_station{name: 'Вокзал 4'}),
+(:organization:train_station{name: 'Вокзал 5'});
+
+CREATE 
+(:organization:market{name: 'Рынок 1'}),
+(:organization:market{name: 'Рынок 2'}),
+(:organization:market{name: 'Рынок 3'}),
+(:organization:market{name: 'Рынок 4'}),
+(:organization:market{name: 'Рынок 5'});
+
+// ###############################################################
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 1' AND b.name = 'Остановка 2'
+CREATE (a)-[:road{type: 'route_1', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 2' AND b.name = 'Остановка 3'
+CREATE (a)-[:road{type: 'route_1', distance: 400}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 3' AND b.name = 'Остановка 4'
+CREATE (a)-[:road{type: 'route_1', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 4' AND b.name = 'Остановка 5'
+CREATE (a)-[:road{type: 'route_1', distance: 400}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 5' AND b.name = 'Остановка 6'
+CREATE (a)-[:road{type: 'route_1', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 1' AND b.name = 'Остановка 7'
+CREATE (a)-[:road{type: 'route_2', distance: 150}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 7' AND b.name = 'Остановка 8'
+CREATE (a)-[:road{type: 'route_2', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 8' AND b.name = 'Остановка 9'
+CREATE (a)-[:road{type: 'route_2', distance: 150}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 9' AND b.name = 'Остановка 10'
+CREATE (a)-[:road{type: 'route_2', distance: 200}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 10' AND b.name = 'Остановка 11'
+CREATE (a)-[:road{type: 'route_2', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 11' AND b.name = 'Остановка 6'
+CREATE (a)-[:road{type: 'route_1', distance: 400}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 1' AND b.name = 'Остановка 12'
+CREATE (a)-[:road{type: 'route_3', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 12' AND b.name = 'Остановка 13'
+CREATE (a)-[:road{type: 'route_3', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 13' AND b.name = 'Остановка 14'
+CREATE (a)-[:road{type: 'route_3', distance: 200}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 14' AND b.name = 'Остановка 15'
+CREATE (a)-[:road{type: 'route_3', distance: 200}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 15' AND b.name = 'Остановка 16'
+CREATE (a)-[:road{type: 'route_3', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 1' AND b.name = 'Остановка 17'
+CREATE (a)-[:road{type: 'route_4', distance: 400}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 17' AND b.name = 'Остановка 18'
+CREATE (a)-[:road{type: 'route_4', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 18' AND b.name = 'Остановка 19'
+CREATE (a)-[:road{type: 'route_4', distance: 400}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 19' AND b.name = 'Остановка 20'
+CREATE (a)-[:road{type: 'route_4', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 20' AND b.name = 'Остановка 25'
+CREATE (a)-[:road{type: 'route_3', distance: 4500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 1' AND b.name = 'Остановка 21'
+CREATE (a)-[:road{type: 'route_5', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 21' AND b.name = 'Остановка 22'
+CREATE (a)-[:road{type: 'route_5', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 22' AND b.name = 'Остановка 23'
+CREATE (a)-[:road{type: 'route_4', distance: 150}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 23' AND b.name = 'Остановка 24'
+CREATE (a)-[:road{type: 'route_5', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 24' AND b.name = 'Остановка 25'
+CREATE (a)-[:road{type: 'route_5', distance: 150}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 25' AND b.name = 'Остановка 26'
+CREATE (a)-[:road{type: 'route_5', distance: 200}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 26' AND b.name = 'Остановка 27'
+CREATE (a)-[:road{type: 'route_5', distance: 300}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 27' AND b.name = 'Остановка 28'
+CREATE (a)-[:road{type: 'route_5', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 28' AND b.name = 'Остановка 29'
+CREATE (a)-[:road{type: 'route_5', distance: 500}]->(b);
+
+MATCH (a:Station), (b:Station)
+WHERE a.name = 'Остановка 29' AND b.name = 'Остановка 30'
+CREATE (a)-[:road{type: 'route_5', distance: 800}]->(b);
+
+
+
+// ###############################################################
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 1' AND b.name = 'Вокзал 4'
+CREATE (a)-[r: near{name: 'train_station'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 1' AND b.name = 'Почта 2'
+CREATE (a)-[r: near{name: 'post_office'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 2' AND b.name = 'Магазин 1'
+CREATE (a)-[r: near{name: 'shop'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 2' AND b.name = 'Театр 4'
+CREATE (a)-[r: near{name: 'theater'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 3' AND b.name = 'Отель 3'
+CREATE (a)-[r: near{name: 'hostel'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 3' AND b.name = 'Школа 2'
+CREATE (a)-[r: near{name: 'school'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 4' AND b.name = 'Кафе 3'
+CREATE (a)-[r: near{name: 'cafe'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 4' AND b.name = 'Кафе 4'
+CREATE (a)-[r: near{name: 'cafe'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 4' AND b.name = 'Кафе 5'
+CREATE (a)-[r: near{name: 'cafe'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 5' AND b.name = 'Школа 4'
+CREATE (a)-[r: near{name: 'school'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 5' AND b.name = 'Детский сад 5'
+CREATE (a)-[r: near{name: 'kindergarten'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 5' AND b.name = 'Магазин 5'
+CREATE (a)-[r: near{name: 'shop'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 6' AND b.name = 'Школа 5'
+CREATE (a)-[r: near{name: 'school'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 6' AND b.name = 'Магазин 4'
+CREATE (a)-[r: near{name: 'shop'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 7' AND b.name = 'Больница 1'
+CREATE (a)-[r: near{name: 'hospital'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 8' AND b.name = 'Больница 2'
+CREATE (a)-[r: near{name: 'hospital'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 8' AND b.name = 'Театр 5'
+CREATE (a)-[r: near{name: 'theater'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 9' AND b.name = 'Больница 3'
+CREATE (a)-[r: near{name: 'hospital'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 10' AND b.name = 'Отель 4'
+CREATE (a)-[r: near{name: 'hostel'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 11' AND b.name = 'Больница 4'
+CREATE (a)-[r: near{name: 'hospital'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 12' AND b.name = 'Кафе 1'
+CREATE (a)-[r: near{name: 'cafe'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 13' AND b.name = 'Кафе 2'
+CREATE (a)-[r: near{name: 'cafe'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 13' AND b.name = 'Почта 3'
+CREATE (a)-[r: near{name: 'post_office'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 13' AND b.name = 'Школа 1'
+CREATE (a)-[r: near{name: 'school'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 14' AND b.name = 'Магазин 2'
+CREATE (a)-[r: near{name: 'shop'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 14' AND b.name = 'Отель 5'
+CREATE (a)-[r: near{name: 'hostel'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 15' AND b.name = 'Магазин 3'
+CREATE (a)-[r: near{name: 'shop'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 15' AND b.name = 'Школа 3'
+CREATE (a)-[r: near{name: 'school'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 16' AND b.name = 'Рынок 4'
+CREATE (a)-[r: near{name: 'market'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 16' AND b.name = 'Почта 4'
+CREATE (a)-[r: near{name: 'post_office'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 17' AND b.name = 'Рынок 3'
+CREATE (a)-[r: near{name: 'market'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 17' AND b.name = 'Театр 3'
+CREATE (a)-[r: near{name: 'theater'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 18' AND b.name = 'Больница 5'
+CREATE (a)-[r: near{name: 'hospital'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 18' AND b.name = 'Завод 2'
+CREATE (a)-[r: near{name: 'factory'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 19' AND b.name = 'Парк 3'
+CREATE (a)-[r: near{name: 'park'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 20' AND b.name = 'Парк 1'
+CREATE (a)-[r3: near{name: 'park'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 20' AND b.name = 'Библиотека 3'
+CREATE (a)-[r: near{name: 'library'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 21' AND b.name = 'Парк 2'
+CREATE (a)-[r: near{name: 'library'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 22' AND b.name = 'Почта 5'
+CREATE (a)-[r: near{name: 'post_office'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 22' AND b.name = 'Стоматология 3'
+CREATE (a)-[r: near{name: 'dentistry'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 23' AND b.name = 'Вокзал 1'
+CREATE (a)-[r: near{name: 'train_station'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 23' AND b.name = 'Рынок 5'
+CREATE (a)-[r: near{name: 'market'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 24' AND b.name = 'Отель 1'
+CREATE (a)-[r: near{name: 'hostel'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 24' AND b.name = 'Рынок 2'
+CREATE (a)-[r: near{name: 'market'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 24' AND b.name = 'Стадион 2'
+CREATE (a)-[r: near{name: 'post_office'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 25' AND b.name = 'Рынок 1'
+CREATE (a)-[r: near{name: 'market'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 25' AND b.name = 'Вокзал 3'
+CREATE (a)-[r: near{name: 'train_station'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 26' AND b.name = 'Библиотека 2'
+CREATE (a)-[r: near{name: 'library'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 27' AND b.name = 'Стадион 1'
+CREATE (a)-[r: near{name: 'stadium'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 28' AND b.name = 'Детский сад 1'
+CREATE (a)-[r: near{name: 'kindergarten'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 29' AND b.name = 'Завод 1'
+CREATE (a)-[r: near{name: 'factory'}]->(b);
+
+MATCH (a:Station), (b:organization)
+WHERE a.name = 'Остановка 30' AND b.name = 'Театр 2'
+CREATE (a)-[r: near{name: 'theater'}]->(b);

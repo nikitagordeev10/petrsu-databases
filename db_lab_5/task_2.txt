@@ -1,0 +1,130 @@
+// ПОЛУЧИТЬ ПОСЛЕДОВАТЕЛЬНОСТЬ ОСТАНОВОК ДЛЯ ЗАДАННОГО МАРШРУТА:
+
+// ------------------------------ Задание 1 ------------------------------
+// Получить последовательность остановок (названия остановки и номер по порядку) для заданного маршрута.
+
+MATCH path = (:Station)-[:road{type: 'route_3'}]->(:Station)
+WITH nodes(path) AS stops
+UNWIND stops AS stop
+WITH DISTINCT stop
+WITH collect(stop) AS uniqueStops
+UNWIND range(0, size(uniqueStops) - 1) AS index
+RETURN uniqueStops[index].name AS название_остановки,
+       index + 1 AS номер_по_порядку
+ORDER BY номер_по_порядку;
+
+// ------------------------------ Задание 2 ------------------------------
+// Получить названия организаций, расположенных рядом с заданной остановкой
+
+match (a:Station{name : 'Остановка 19'})-[r:near]->(b:organization)
+return b.name as названия_организаций_расположенных_рядом_с_заданной_остановкой
+
+// ------------------------------ Задание 3 ------------------------------
+// Найти все названия остановок, на которых возможны пересадки на другой маршрут:
+
+match (a:Station)-[r:road]->(:Station)
+with  a, count(r) as num
+where num > 1
+return a.name as `Название остановки`, num as `Количество маршрутов`
+
+// ------------------------------ Задание 4 ------------------------------
+// Найти все названия остановок, на которых останавливается только один маршрут:
+
+match (:Station)-[r:road]->(b:Station)
+with  b, count(r) as num
+where num = 1
+return b.name as `Название остановки`
+
+// ------------------------------ Задание 5 ------------------------------
+// Найти названия учебных организаций и названия остановок, около которых они расположены:
+
+match (b:Station)-[r:near]->(a:organization:school)
+return a.name as `Учебная организация`, b.name as Остановка
+
+// ------------------------------ Задание 6 ------------------------------
+// Получить все маршруты от одной заданной остановки до другой заданной остановки:
+
+MATCH path = (st:Station{name: 'Остановка 1'})-[:road*]->(x:Station{name:'Остановка 6'})
+RETURN [node IN nodes(path) | node.name] AS все_маршруты_от_одной_остановки_до_другой
+
+MATCH path = (st:Station{name: 'Остановка 1'})-[:road*]->(x:Station{name:'Остановка 5'})
+RETURN [node IN nodes(path) | node.name] AS все_маршруты_от_одной_остановки_до_другой
+
+MATCH path = (st:Station{name: 'Остановка 17'})-[:road*]->(x:Station{name:'Остановка 36'})
+RETURN [node IN nodes(path) | node.name] AS все_маршруты_от_одной_остановки_до_другой
+
+// ------------------------------ Задание 7 ------------------------------
+Получить минимальный по количеству остановок маршрут от одной заданной остановки до другой заданной остановки:
+
+MATCH (a:Station{name:'Остановка 1'}), (b:Station{name:'Остановка 6'}),
+s = shortestPath((a)-[:road*]->(b))
+RETURN [node IN nodes(s) | node.name] AS shortestRoute
+
+// ------------------------------ Задание 8 ------------------------------
+Получить все маршруты, которые проходят через 3 заданные остановки
+
+MATCH path = (s:Station)-[:road*]->(e:Station)
+WHERE
+ALL(stop_name IN ["Остановка 12", "Остановка 13", "Остановка 14"]
+WHERE stop_name IN [stop in nodes(path) | stop.name])
+AND ALL(rel IN relationships(path) WHERE rel.type = relationships(path)[0].type)
+WITH relationships(path) AS rels
+UNWIND rels AS edge
+RETURN DISTINCT edge.type AS Маршрут
+
+MATCH path = (s:Station)-[:road*]->(e:Station)
+WHERE
+ALL(stop_name IN ["Остановка 1", "Остановка 6", "Остановка 3"]
+WHERE stop_name IN [stop in nodes(path) | stop.name])
+AND ALL(rel IN relationships(path) WHERE rel.type = relationships(path)[0].type)
+WITH relationships(path) AS rels
+UNWIND rels AS edge
+RETURN DISTINCT edge.type AS маршруты_которые_проходят_через_3_заданные_остановки
+
+// ------------------------------ Задание 9 ------------------------------
+// Получить маршрут, который проходит рядом с максимальным количеством магазинов
+
+CALL {
+  MATCH (a:Station)-[r:road]->(b:Station)
+  WITH COLLECT(DISTINCT r.type) AS routes
+  UNWIND routes AS route
+  RETURN route
+}
+MATCH p = (s:Station)-[:road {type: route}]->(d:Station)-[r:near]->(o:organization:shop)
+WITH route, COUNT(DISTINCT o) AS numShops
+ORDER BY numShops DESC
+LIMIT 1
+RETURN route AS `Маршрут`, numShops AS `Количество магазинов`;
+
+
+// ------------------------------ Задание 10 ------------------------------
+// Получить минимальный по расстоянию маршрут от одной заданной остановки до другой заданной остановки
+
+MATCH path = (a:Station{name:'Остановка 1'})-[r1:road*]->(b:Station{name:'Остановка 25'})
+WITH path, REDUCE(s = 0, rel IN relationships(path) | s + rel.distance) AS len
+ORDER BY len ASC
+LIMIT 1
+WITH path, len
+RETURN [node IN nodes(path) | node.name] AS `Путь`, len AS `Сумма расстояний`;
+
+
+// ------------------------------ Задание 11 ------------------------------
+// Найти названия организаций, расположенных рядом с третьей по счету остановкой от заданной остановки
+
+match path = (a0:Station {name:'Остановка 21'})-[r1:road]->()-[r2:road]->()-[r3:road]->(a3:Station)-[:near]-(b:organization)
+return distinct b.name
+
+// ------------------------------ Задание 12 ------------------------------
+// Найти все маршруты, длина которых превышает 3 км
+
+call{
+    match (a:Station)-[r:road]->(b:Station) 
+    with collect(distinct r.type) as n
+    unwind n as q
+    return q as routes
+}
+
+match path = (a:Station)-[r:road{type: routes}]->(b)
+with distinct sum(r.distance) as dist, routes
+where dist > 3000
+return routes as `Маршрут`, dist as `Дистанция`
